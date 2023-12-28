@@ -4,7 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>URL Encoder & Decoder</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- jQuery -->
+  <script src="lib/jquery-3.6.0.min.js"></script>
+      <!-- Font Awesome -->
+      <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/brands.min.css"/>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/regular.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/solid.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/brands.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/brands.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/regular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/solid.min.js"></script>
+  <!-- Clipboard -->
+  <script src="lib/clipboard.min.js"></script>
+  <link rel="stylesheet" href="lib/primer.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -17,18 +34,69 @@
       <div class="controls">
         <label for="urlInputEncode">Enter Text to Encode:</label>
         <input type="text" id="urlInputEncode" placeholder="Enter text to encode">
-        <button onclick="encodeText()">Encode</button>
+        <button class="transcribe-button" onclick="encodeText()">Encode</button>
     </div>
 
     <div class="controls">
         <label for="urlInputDecode">Enter URL to Decode:</label>
         <input type="text" id="urlInputDecode" placeholder="Enter URL to decode">
-        <button onclick="decodeURL()">Decode</button>
+        <button class="transcribe-button" onclick="decodeURL()">Decode</button>
     </div>
 
     <div class="controls">
-      <div id="result">
-        <strong>&nbsp;</strong>
+      <div id="display">
+        <span id="displayText">
+          <strong>Result Text:</strong>
+        </span>
+        <input
+          id="result"
+          type="text"
+          value=""
+          placeholder="Encoded or Decoded Result"
+        />
+        <button
+          class="btn tooltipped tooltipped-se p-2 border copy-button"
+          aria-label="Copied"
+          data-clipboard-target="#result"
+          onclick="copyToClipboard()"
+        >
+          <span id="svg-copy">
+            <svg
+              aria-hidden="true"
+              height="16"
+              viewBox="0 0 16 16"
+              version="1.1"
+              width="16"
+              data-view-component="true"
+              class="octicon octicon-copy js-clipboard-copy-icon d-inline-block"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"
+              ></path>
+            </svg>
+          </span>
+          <span id="svg-copied">
+            <svg
+              aria-hidden="true"
+              height="16"
+              viewBox="0 0 16 16"
+              version="1.1"
+              width="16"
+              data-view-component="true"
+              class="octicon octicon-check js-clipboard-check-icon color-fg-success d-inline-block"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"
+              ></path>
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
   </main>
@@ -37,7 +105,7 @@
     <p>&copy; 2023 URL Encoder & Decoder. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>

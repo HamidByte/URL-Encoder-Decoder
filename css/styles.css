@@ -58,7 +58,7 @@ label {
 }
 
 input {
-  padding: 12px;
+  padding: 12px 10px;
   margin: 8px 0;
   /* width: calc(70% - 20px); */
   width: 78%; /* Adjusted width for input */
@@ -76,7 +76,7 @@ input:focus {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-button {
+.transcribe-button {
   margin: 8px 0;
   background-color: #4CAF50;
   color: #fff;
@@ -89,11 +89,11 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.transcribe-button:hover {
   background-color: #45a049;
 }
 
-#result {
+#display {
   width: 100%;
   margin-top: 3em;
   padding: 30px 20px;
@@ -104,8 +104,22 @@ button:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#result strong {
+#displayText {
+  display: inline-block; /* Make it a block element to set width */
+  width: 150px;
+}
+
+#displayText strong {
   font-weight: bold;
+}
+
+#result {
+  width: 500px;
+}
+
+.copy-button {
+  width: 40px;
+  height: 40px;
 }
 
 footer {
