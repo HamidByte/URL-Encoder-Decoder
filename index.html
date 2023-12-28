@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Encoder & Decoder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1 class="title">URL Encoder & Decoder</h1>
+    <p class="description">A straightforward tool for encoding and decoding URLs, with support for ASCII encoding. Easily manipulate web addresses with simplicity.</p>
+  </header>
+
+    <main class="main-container">
+      <div class="controls">
+        <label for="urlInputEncode">Enter Text to Encode:</label>
+        <input type="text" id="urlInputEncode" placeholder="Enter text to encode">
+        <button onclick="encodeText()">Encode</button>
+    </div>
+
+    <div class="controls">
+        <label for="urlInputDecode">Enter URL to Decode:</label>
+        <input type="text" id="urlInputDecode" placeholder="Enter URL to decode">
+        <button onclick="decodeURL()">Decode</button>
+    </div>
+
+    <div class="controls">
+      <div id="result">
+        <strong>&nbsp;</strong>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 URL Encoder & Decoder. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
