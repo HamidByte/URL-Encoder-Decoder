@@ -4,4 +4,4 @@ A straightforward tool for encoding and decoding URLs, with support for ASCII en
 
 ## Demo
 
-You can check out a live demo of Fancy Weather [here](https://hamidbyte.github.io/URL-Encoder-Decoder/).
+You can check out a live demo [here](https://hamidbyte.github.io/URL-Encoder-Decoder/).
